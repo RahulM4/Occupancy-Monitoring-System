@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "447427232614",
+    "project_id": "omsapp-d742e",
+    "storage_bucket": "omsapp-d742e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447427232614:android:eaaf0f66e57e37fb467ea7",
+        "android_client_info": {
+          "package_name": "com.rahul.omsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447427232614-0ajiv8j65s3jv30lph3mucqsicm79r67.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rahul.omsapp",
+            "certificate_hash": "095bdeb61f497d46f814ef2587e2dd122197aec8"
+          }
+        },
+        {
+          "client_id": "447427232614-4h3e7u68f9utemgo2cesk1c3t0lfe5kj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCU0F32B1DfuKcZ5zZXYsApjYWkWZ6Lwk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447427232614-4h3e7u68f9utemgo2cesk1c3t0lfe5kj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminLogin">
+
+    <TextView
+        android:id="@+id/gotoHomeFromAdminLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#40E902E5"
+        android:drawablePadding="5dp"
+        android:padding="2dp"
+        android:text="Home "
+        android:textSize="18sp"
+        app:drawableStartCompat="@drawable/ic_baseline_home" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="Administration Login"
+        android:textColor="#E902E5"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:padding="20dp"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <EditText
+            android:id="@+id/admin_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_email"
+            android:drawablePadding="20dp"
+            android:hint="Email"
+            android:maxLines="1"
+            android:maxLength="40"
+            android:inputType="textEmailAddress"
+            android:nextFocusDown="@id/edit_text_password"
+            android:textColorHint="#65150F0F"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <EditText
+            android:id="@+id/admin_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_password"
+            android:drawablePadding="20dp"
+            android:hint="Password"
+            android:maxLines="1"
+            android:maxLength="16"
+            android:inputType="textPassword"
+            android:nextFocusDown="@id/edit_text_phone"
+            android:textColorHint="#65150F0F"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/adminLogin_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="#E902E5"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            tools:ignore="TextContrastCheck" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

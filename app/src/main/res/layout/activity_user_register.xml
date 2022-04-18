@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserRegister">
+
+    <TextView
+        android:id="@+id/gotoHomeRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#40E902E5"
+        android:drawableStart="@drawable/ic_baseline_home"
+        android:drawablePadding="5dp"
+        android:padding="2dp"
+        android:text="Home "
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-black"
+        android:text="User Registration"
+        android:textAlignment="center"
+        android:textColor="#E902E5"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+
+        <EditText
+            android:id="@+id/edit_text_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_person"
+            android:drawablePadding="20dp"
+            android:hint="Full name"
+            android:inputType="textPersonName"
+            android:maxLength="30"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:nextFocusDown="@id/edit_text_enrollment"
+            android:textColorHint="#65150F0F" />
+
+        <EditText
+            android:id="@+id/edit_text_enrollment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_card"
+            android:drawablePadding="20dp"
+            android:hint="Enrollment No."
+            android:inputType="textPersonName"
+            android:maxLength="12"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:nextFocusDown="@id/edit_text_email"
+            android:textColorHint="#65150F0F"
+            android:autofillHints="" />
+
+
+        <EditText
+            android:id="@+id/edit_text_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_email"
+            android:drawablePadding="20dp"
+            android:hint="Email required"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:nextFocusDown="@id/edit_text_phone"
+            android:textColorHint="#65150F0F"
+            android:autofillHints="" />
+
+
+        <EditText
+            android:id="@+id/edit_text_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789"
+            android:drawableLeft="@drawable/ic_baseline_local_phone"
+            android:drawablePadding="20dp"
+            android:hint="Mobile required"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:minHeight="48dp"
+            android:nextFocusDown="@id/edit_text_password"
+            android:textColorHint="#65150F0F" />
+
+        <EditText
+            android:id="@+id/edit_text_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_password"
+            android:drawablePadding="20dp"
+            android:hint="Password required"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:nextFocusDown="@id/edit_text_confirm_password"
+            android:textColorHint="#65150F0F"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/edit_text_confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_lock_open_24"
+            android:drawablePadding="20dp"
+            android:hint="confirm password required"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:nextFocusDown="@id/userRegister_btn"
+            android:textColorHint="#65150F0F"
+            android:importantForAutofill="no" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/userRegister_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:background="#E902E5"
+            android:text="Register"
+            android:textAllCaps="false"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="Already registered User"
+            android:textColor="#E902E5"
+            android:textSize="20sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/alreadyHaveAnAccount_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="#E902E5"
+            android:text="Sign In"
+            android:textAllCaps="false"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

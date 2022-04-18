@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserLogin">
+
+    <TextView
+        android:id="@+id/gotoHomeLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#40E902E5"
+        android:drawableStart="@drawable/ic_baseline_home"
+        android:drawablePadding="5dp"
+        android:padding="2dp"
+        android:text="Home "
+        android:textColor="#8E24AA"
+        android:textSize="18sp"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-black"
+        android:text="User Login"
+        android:textAlignment="center"
+        android:textColor="#E902E5"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:padding="20dp"
+        android:layout_margin="20dp">
+
+        <EditText
+            android:id="@+id/edit_text_emailL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_email"
+            android:drawablePadding="20dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:maxLength="40"
+            android:maxLines="1"
+            android:nextFocusDown="@id/edit_text_passwordL"
+            android:textColorHint="#65150F0F" />
+
+
+        <EditText
+            android:id="@+id/edit_text_passwordL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_password"
+            android:drawablePadding="20dp"
+            android:hint="Password"
+            android:maxLength="16"
+            android:maxLines="1"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:nextFocusDown="@id/edit_text_phone"
+            android:textColorHint="#65150F0F" />
+
+        <TextView
+            android:id="@+id/forgetPassword"
+            android:text=" Forget password "
+            android:elevation="5dp"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/userLogin_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="#E902E5"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textColor="#000000" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="New User"
+            android:textColor="#E902E5"
+            android:textSize="20sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/createAnAccount_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="#E902E5"
+            android:text="Create an Account"
+            android:textAllCaps="false"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+
+</RelativeLayout>

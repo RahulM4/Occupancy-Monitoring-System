@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+    <TextView
+        android:id="@+id/title_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E902E5"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="Indian Institute of Information Technology, Allahabad"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:background="#95C500E6"
+        android:layout_below="@+id/title_home"
+        android:layout_height="wrap_content">
+
+        <TextClock
+            android:id="@+id/time"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="hh:mm::ss"
+            android:text="hh:mm:ss" />
+        <TextClock
+            android:layout_weight="1"
+            android:gravity="center"
+            android:id="@+id/date_time_am_pm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="a"
+            android:text="AM PM" />
+        <TextClock
+            android:id="@+id/date"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="MMM dd, yyyy"
+            android:text="Date" />
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/occupancy_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_home"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:drawableLeft="@drawable/ic_baseline_people_outline_24"
+        android:drawablePadding="10dp"
+        android:text="Occupancy Status"
+        android:textColor="#E902E5"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:padding="5dp"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/occupancy_status"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Max. Capacity: "
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Available Seat:  "
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:weightSum="2"
+        android:layout_alignParentBottom="true">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/gotoSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#E902E5"
+            android:text="Sign In"
+            android:textColor="#000000" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/gotoAdminLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#E902E5"
+            android:text="admin"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
+</RelativeLayout>
