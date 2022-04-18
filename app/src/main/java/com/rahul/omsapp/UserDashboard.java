@@ -94,7 +94,6 @@ public class UserDashboard extends AppCompatActivity {
                     mobile_user_dashboard1.setText(mobileNo);
                     email_user_dashboard1.setText(email);
 
-
                 }
             }
 

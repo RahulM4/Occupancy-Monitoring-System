@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OMSApp">
         <activity
+            android:name=".DialogBox"
+            android:exported="false" />
+        <activity
             android:name=".UserRegister"
             android:exported="false" />
         <activity
