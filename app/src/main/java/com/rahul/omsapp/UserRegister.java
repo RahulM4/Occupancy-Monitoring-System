@@ -135,7 +135,7 @@ public class UserRegister extends AppCompatActivity {
                     dataRef.child(firebaseUser.getUid()).setValue(userData);
 
 
-                    Intent intent =new Intent(UserRegister.this,UserDashboard.class);
+                    Intent intent =new Intent(UserRegister.this,UserLogin.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                     finish();
@@ -143,9 +143,6 @@ public class UserRegister extends AppCompatActivity {
                 else
                 {
                     Toast.makeText(UserRegister.this, "Registration Failed", Toast.LENGTH_SHORT).show();
-                    Intent intent= new Intent(UserRegister.this, Home.class);
-                    startActivity(intent);
-                    finish();
                 }
             }
         });
