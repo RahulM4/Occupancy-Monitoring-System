@@ -123,9 +123,6 @@ public class UserLogin extends AppCompatActivity {
                 else
                 {
                     Toast.makeText(UserLogin.this, "Login Failed ", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(UserLogin.this,Home.class);
-                    startActivity(intent);
-                    finish();
                 }
 
 
