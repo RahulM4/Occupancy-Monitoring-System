@@ -25,7 +25,7 @@ public class Home extends AppCompatActivity {
         gotoSignIn = findViewById(R.id.gotoSignUp);
         gotoAdminLogin=findViewById(R.id.gotoAdminLogin);
         availableSeats=findViewById(R.id.available_seat);
-        //maxLimit=findViewById(R.id.max_capacity);
+        maxLimit=findViewById(R.id.max_capacity);
 
 
 
@@ -43,7 +43,9 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        Intent intent = getIntent();
+        String str = intent.getStringExtra("message");
+        maxLimit.setText(str);
     }
 
 

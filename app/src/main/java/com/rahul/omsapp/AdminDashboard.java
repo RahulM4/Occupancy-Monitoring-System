@@ -67,7 +67,10 @@ public class AdminDashboard extends AppCompatActivity {
         btn_okay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                adminID.setText(txt_inputText.getText().toString());
+                Intent intent = new Intent(getApplicationContext(), Home.class);
+                intent.putExtra("message", txt_inputText.getText().toString());
+
+                startActivity(intent);
                 alertDialog.dismiss();
             }
         });
