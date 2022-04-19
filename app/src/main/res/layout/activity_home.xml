@@ -30,30 +30,32 @@
 
         <TextClock
             android:id="@+id/time"
-            android:layout_weight="1"
             android:gravity="center"
+            android:layout_marginRight="10dp"
             android:layout_width="wrap_content"
+            android:layout_marginLeft="-80dp"
             android:layout_height="wrap_content"
             android:format12Hour="hh:mm::ss"
             android:text="hh:mm:ss" />
         <TextClock
-            android:layout_weight="1"
+
             android:gravity="center"
             android:id="@+id/date_time_am_pm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:format12Hour="a"
+            android:layout_marginRight="10dp"
             android:text="AM PM" />
         <TextClock
             android:id="@+id/date"
-            android:layout_weight="1"
+            android:layout_marginLeft="100dp"
             android:gravity="center"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:format12Hour="MMM dd, yyyy"
             android:text="Date" />
     </LinearLayout>
-
 
 
     <TextView
@@ -73,11 +75,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="left"
-        android:padding="5dp"
-        android:layout_margin="20dp"
-        android:layout_below="@+id/occupancy_status"
         android:layout_centerInParent="true"
+        android:layout_margin="5dp"
+        android:background="@drawable/background_border"
+        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
@@ -88,11 +89,28 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/max_capacity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:text="00"
+            android:textColor="#ED0000"
+            android:textSize="40sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
             android:text="Available Seat:  "
             android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/available_seat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="00"
+            android:textColor="#00C308"
+            android:textSize="40sp" />
 
     </LinearLayout>
 

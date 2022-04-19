@@ -8,6 +8,7 @@
     tools:context=".AdminDashboard">
 
     <LinearLayout
+        android:id="@+id/LinearLayoutAD1"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:gravity="center"
@@ -19,15 +20,16 @@
 
 
         <TextView
-            android:id="@+id/name_user_dashboard"
+            android:id="@+id/name_admin_dashboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hello, Name"
             android:textColor="#E902E5"
             android:textSize="20sp"
             android:textStyle="bold" />
+
         <TextView
-            android:id="@+id/enrollment_user_dashboard"
+            android:id="@+id/ID_admin_dashboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Admin ID"
@@ -37,11 +39,66 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/LinearLayoutAD2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LinearLayoutAD1"
+        android:layout_margin="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/background_border"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/setSeats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:onClick="setSetOccupancy"
+            android:text="Set Occupancy Limit"
+            android:textStyle="bold"
+            tools:ignore="OnClick" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ShowDatabaseOfUsers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="100dp"
+            android:text="Show Users Databases"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/showCheck_out_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="40dp"
+            android:text="show Timestamp of users"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/setSeats"
-        android:textStyle="bold"
-        android:text="Set Occupancy"
-        android:layout_centerInParent="true"
+        android:id="@+id/logout_user_dashboard"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="#40E902E5"
+        android:drawableLeft="@drawable/ic_baseline_power_logout"
+        android:text="logout" />
+
+
+
 </RelativeLayout>

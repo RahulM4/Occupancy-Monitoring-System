@@ -9,27 +9,27 @@
     <LinearLayout
         android:id="@+id/linearLayout_userDashboard"
         android:orientation="horizontal"
-       android:layout_margin="10dp"
+       android:layout_margin="20dp"
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/gotoHomeFromUserDashboard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
             android:drawableLeft="@drawable/ic_baseline_home"
             android:background="#40E902E5"
-            android:layout_marginRight="110dp"
+            android:layout_marginRight="60dp"
             android:text="Home " />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/logout_user_dashboard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
             android:text="logout"
             android:drawableLeft="@drawable/ic_baseline_power_logout"
-            android:layout_marginLeft="110dp"
+            android:layout_marginLeft="60dp"
             android:background="#40E902E5"/>
 
     </LinearLayout>
@@ -70,6 +70,8 @@
             android:layout_height="wrap_content"
             android:text="Enrollment Loading...."
             android:textColor="#E902E5"
+            android:drawablePadding="5dp"
+            android:drawableLeft="@drawable/ic_baseline_card"
             android:textSize="20sp"
             android:textStyle="italic" />
 
@@ -77,8 +79,10 @@
             android:id="@+id/mobile_user_dashboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phone Loading"
+            android:text="Phone Loading...."
             android:textColor="#E902E5"
+            android:drawablePadding="5dp"
+            android:drawableLeft="@drawable/ic_baseline_local_phone"
             android:textSize="20sp"
             android:textStyle="italic" />
 
@@ -86,7 +90,9 @@
             android:id="@+id/email_user_dashboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email Loding"
+            android:drawablePadding="5dp"
+            android:drawableLeft="@drawable/ic_baseline_email"
+            android:text="Email Loading...."
             android:textColor="#E902E5"
             android:textSize="20sp"
             android:textStyle="italic" />

@@ -97,4 +97,20 @@ public class AdminLogin extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(firebaseAuth.getCurrentUser() != null)
+        {
+            Toast.makeText(AdminLogin.this, "Your are already logged in ", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(AdminLogin.this,AdminDashboard.class));
+            finish();
+
+        }
+        else
+        {
+            Toast.makeText(AdminLogin.this, "you can login now!", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

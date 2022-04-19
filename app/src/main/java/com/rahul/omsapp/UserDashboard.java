@@ -50,14 +50,14 @@ public class UserDashboard extends AppCompatActivity {
         FirebaseUser firebaseUser =firebaseAuth.getCurrentUser();
 
 
-
         userLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 firebaseAuth.signOut();
                 Toast.makeText(UserDashboard.this, "logout success", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(UserDashboard.this, Home.class));
+                startActivity(new Intent(UserDashboard.this, UserLogin.class));
                 finish(); }});
+
         gotoHomeFromUserDashboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,6 +84,7 @@ public class UserDashboard extends AppCompatActivity {
                 UserData userData = snapshot.getValue(UserData.class);
                 if(userData !=null)
                 {
+
                     fullName =userData.userName;
                     email =firebaseUser.getEmail();
                     mobileNo =userData.mobileNo;
