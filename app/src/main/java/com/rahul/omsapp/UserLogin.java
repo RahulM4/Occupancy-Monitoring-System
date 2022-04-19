@@ -156,13 +156,13 @@ public class UserLogin extends AppCompatActivity {
 
     @Override
     protected void onStart() {
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
         super.onStart();
-        if(firebaseAuth.getCurrentUser() != null)
+        if(firebaseAuth.getCurrentUser() != null && firebaseUser.isEmailVerified())
         {
             Toast.makeText(UserLogin.this, "Your are already logged in ", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(UserLogin.this,UserDashboard.class));
             finish();
-
         }
         else
         {

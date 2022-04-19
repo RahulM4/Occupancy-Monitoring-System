@@ -99,8 +99,6 @@ public class UserRegister extends AppCompatActivity {
                                             }
                                         });
 
-
-
         gotoHomePageFromRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -125,7 +123,7 @@ public class UserRegister extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful())
                 {
-                    Toast.makeText(UserRegister.this, "Verify!! An email sent to your emailID", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserRegister.this, "Please Verify!! An email sent to your emailID \n Then You will able to login!!", Toast.LENGTH_LONG).show();
                     FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
                     firebaseUser.sendEmailVerification();
@@ -134,15 +132,13 @@ public class UserRegister extends AppCompatActivity {
                     DatabaseReference dataRef =FirebaseDatabase.getInstance().getReference("Registered Users");
                     dataRef.child(firebaseUser.getUid()).setValue(userData);
 
-
                     Intent intent =new Intent(UserRegister.this,UserLogin.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                     finish();
                 }
                 else
                 {
-                    Toast.makeText(UserRegister.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserRegister.this, "Something went wrong \nRegistration Failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
