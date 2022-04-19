@@ -68,6 +68,7 @@ public class AdminDashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 adminID.setText(txt_inputText.getText().toString());
+                //kak
                 alertDialog.dismiss();
             }
         });
