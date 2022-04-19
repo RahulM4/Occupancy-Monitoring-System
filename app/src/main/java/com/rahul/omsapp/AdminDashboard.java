@@ -69,7 +69,6 @@ public class AdminDashboard extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Home.class);
                 intent.putExtra("message", txt_inputText.getText().toString());
-
                 startActivity(intent);
                 alertDialog.dismiss();
             }
