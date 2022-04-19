@@ -43,9 +43,6 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Intent intent = getIntent();
-        String str = intent.getStringExtra("message");
-        maxLimit.setText(str);
     }
 
 
