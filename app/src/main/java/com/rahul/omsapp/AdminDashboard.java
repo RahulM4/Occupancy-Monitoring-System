@@ -67,15 +67,13 @@ public class AdminDashboard extends AppCompatActivity {
         btn_okay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String numberr=txt_inputText.getText().toString();
-                firebaseDatabase=FirebaseDatabase.getInstance();
-                databaseReference=FirebaseDatabase.getInstance().getReference("Maxcap");
-                MaxCapacity demo=new MaxCapacity(numberr);
-                databaseReference.setValue(demo);
+                String numberR=txt_inputText.getText().toString();
+                MaxCapacity maxCapacity=new MaxCapacity(numberR);
+                databaseReference=FirebaseDatabase.getInstance().getReference("Occupancy Status");
+                databaseReference.child("Max Capacity").setValue(maxCapacity);
                 alertDialog.dismiss();
             }
         });
-
         alertDialog.show();
     }
 

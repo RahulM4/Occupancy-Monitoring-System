@@ -1,12 +1,12 @@
 package com.rahul.omsapp;
 
 public class MaxCapacity {
-    public String num;
+    public String maxCapacity;
 
     public MaxCapacity() {}
 
-    public MaxCapacity(String num)
+    public MaxCapacity(String maxCapacity)
     {
-        this.num=num;
+        this.maxCapacity=maxCapacity;
     }
 }
