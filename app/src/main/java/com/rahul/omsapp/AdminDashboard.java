@@ -67,9 +67,11 @@ public class AdminDashboard extends AppCompatActivity {
         btn_okay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                adminID.setText(txt_inputText.getText().toString());
-                //kak
-                //mmm
+                String numberr=txt_inputText.getText().toString();
+                firebaseDatabase=FirebaseDatabase.getInstance();
+                databaseReference=FirebaseDatabase.getInstance().getReference("Maxcap");
+                MaxCapacity demo=new MaxCapacity(numberr);
+                databaseReference.setValue(demo);
                 alertDialog.dismiss();
             }
         });
