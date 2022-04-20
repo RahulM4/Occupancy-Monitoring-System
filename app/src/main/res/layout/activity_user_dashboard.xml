@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/linearLayout_userDashboard"
         android:orientation="horizontal"
-       android:layout_margin="20dp"
+        android:layout_margin="20dp"
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -18,19 +18,21 @@
             android:id="@+id/gotoHomeFromUserDashboard"
             android:layout_width="120dp"
             android:layout_height="20dp"
-            android:drawableLeft="@drawable/ic_baseline_home"
-            android:background="#40E902E5"
             android:layout_marginRight="60dp"
-            android:text="Home " />
+            android:background="#40E902E5"
+            android:drawableLeft="@drawable/ic_baseline_home"
+            android:text="Home "
+            tools:ignore="TouchTargetSizeCheck" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/logout_user_dashboard"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:text="logout"
-            android:drawableLeft="@drawable/ic_baseline_power_logout"
             android:layout_marginLeft="60dp"
-            android:background="#40E902E5"/>
+            android:background="#40E902E5"
+            android:drawableLeft="@drawable/ic_baseline_power_logout"
+            android:text="logout"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
 
@@ -101,28 +103,34 @@
     </LinearLayout>
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:background="#489C27B0"
-        android:padding="5dp"
-        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/LinearLayoutProfile"
-        android:layout_height="wrap_content">
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/entry"
-            android:text="Enter"
-            android:layout_weight="1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="Enter"
+            android:textColor="@color/black" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/exit"
-            android:text="Exit"
-            android:layout_weight="1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="Exit"
+            android:textColor="@color/black" />
 
 
     </LinearLayout>

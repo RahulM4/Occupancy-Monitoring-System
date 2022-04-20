@@ -24,22 +24,22 @@ import org.w3c.dom.Text;
 public class Home extends AppCompatActivity {
 
     AppCompatButton gotoSignIn,gotoAdminLogin;
-    TextView maxLimit, availableSeats;
+    TextView max_limit, available_Seat;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-    public  String setMax;
+    public  String setMax, availSeats;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
         gotoSignIn = findViewById(R.id.gotoSignUp);
         gotoAdminLogin=findViewById(R.id.gotoAdminLogin);
-        availableSeats=findViewById(R.id.available_seat);
-        maxLimit=findViewById(R.id.max_capacity);
+        available_Seat=findViewById(R.id.available_seat);
+        max_limit=findViewById(R.id.max_capacity);
 
         MaxCapacityLimit();
-
         gotoSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,20 +54,23 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     private void MaxCapacityLimit() {
-
-
-        DatabaseReference ref =FirebaseDatabase.getInstance().getReference("Occupancy Status");
-        ref.child("Max Capacity").addListenerForSingleValueEvent(new ValueEventListener() {
+        DatabaseReference ref =FirebaseDatabase.getInstance().getReference("Admin");
+        ref.child("Max_Capacity").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 MaxCapacity maxCapacity = snapshot.getValue(MaxCapacity.class);
                 if(maxCapacity !=null)
                 {
-                    setMax =maxCapacity.maxCapacity;
-                    maxLimit.setText(setMax);
+
+                    setMax = maxCapacity.max_Capacity;
+                    availSeats=maxCapacity.available_Seats;
+
+                    max_limit.setText(setMax);
+                    available_Seat.setText(availSeats);
 
                 }
             }

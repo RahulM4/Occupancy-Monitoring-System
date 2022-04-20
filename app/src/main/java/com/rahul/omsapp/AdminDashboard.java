@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.app.AlertDialog;
+import android.content.ComponentCallbacks;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,7 @@ public class AdminDashboard extends AppCompatActivity {
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
     TextView adminID,adminName;
+    //public String available;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,10 +69,13 @@ public class AdminDashboard extends AppCompatActivity {
         btn_okay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String numberR=txt_inputText.getText().toString();
-                MaxCapacity maxCapacity=new MaxCapacity(numberR);
-                databaseReference=FirebaseDatabase.getInstance().getReference("Occupancy Status");
-                databaseReference.child("Max Capacity").setValue(maxCapacity);
+                String max_limits=txt_inputText.getText().toString();
+                String available = max_limits;
+
+                MaxCapacity maxCapacity=new MaxCapacity(max_limits,available);
+
+                databaseReference=FirebaseDatabase.getInstance().getReference("Admin");
+                databaseReference.child("Max_Capacity").setValue(maxCapacity);
                 alertDialog.dismiss();
             }
         });

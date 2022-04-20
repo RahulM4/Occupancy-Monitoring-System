@@ -32,6 +32,7 @@ public class UserDashboard extends AppCompatActivity {
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,7 +91,7 @@ public class UserDashboard extends AppCompatActivity {
                     mobileNo =userData.mobileNo;
                     enrollment = userData.enrollment;
 
-                    name_user_dashboard1.setText("Hi, "+fullName);
+                    name_user_dashboard1.setText("Hello, "+fullName);
                     enrollment_user_dashboard1.setText(enrollment);
                     mobile_user_dashboard1.setText(mobileNo);
                     email_user_dashboard1.setText(email);
