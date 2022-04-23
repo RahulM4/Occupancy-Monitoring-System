@@ -129,7 +129,7 @@ public class UserRegister extends AppCompatActivity {
 
                     UserData userData =new UserData(fullName,enrollmentNo,emailID,mobileNo);
                     DatabaseReference dataRef =FirebaseDatabase.getInstance().getReference("Registered Users");
-                    dataRef.child(firebaseUser.getUid()).setValue(userData);
+                    dataRef.child(firebaseUser.getUid()).child("Profile Details").setValue(userData);
 
                     Intent intent =new Intent(UserRegister.this,UserLogin.class);
                     startActivity(intent);

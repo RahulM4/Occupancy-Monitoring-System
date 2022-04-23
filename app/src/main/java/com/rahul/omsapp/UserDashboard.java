@@ -4,12 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
-import android.app.backup.FullBackupDataOutput;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +18,13 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
+
+import java.security.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Map;
 
 public class UserDashboard extends AppCompatActivity {
 
@@ -31,6 +36,7 @@ public class UserDashboard extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
+    TextView entryTimeSt,exitTimeSt;
 
 
     @Override
@@ -46,9 +52,13 @@ public class UserDashboard extends AppCompatActivity {
         enrollment_user_dashboard1=findViewById(R.id.enrollment_user_dashboard);
         mobile_user_dashboard1=findViewById(R.id.mobile_user_dashboard);
         email_user_dashboard1=findViewById(R.id.email_user_dashboard);
+        entryTimeSt=findViewById(R.id.entryTime);
+        exitTimeSt=findViewById(R.id.exitTime);
 
         firebaseAuth=FirebaseAuth.getInstance();
         FirebaseUser firebaseUser =firebaseAuth.getCurrentUser();
+        
+        
 
 
         userLogout.setOnClickListener(new View.OnClickListener() {
@@ -58,13 +68,11 @@ public class UserDashboard extends AppCompatActivity {
                 Toast.makeText(UserDashboard.this, "logout success", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(UserDashboard.this, UserLogin.class));
                 finish(); }});
-
         gotoHomeFromUserDashboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(UserDashboard.this,Home.class));
                 finish(); }});
-
         if(firebaseUser ==null)
         {
             Toast.makeText(UserDashboard.this, "Something went wrong", Toast.LENGTH_LONG).show();
@@ -74,12 +82,58 @@ public class UserDashboard extends AppCompatActivity {
             updateUI(firebaseUser);
         }
 
+
+        entry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recordEnterTime();
+                entry.setVisibility(view.GONE);
+                exit.setVisibility(view.VISIBLE);
+                Toast.makeText(UserDashboard.this, "Please Take your seat", Toast.LENGTH_SHORT).show();
+            }
+        });
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                exit.setVisibility(view.GONE);
+                recordExitTime();
+                firebaseAuth.signOut();
+                Toast.makeText(UserDashboard.this, " Exited \n Thank You!!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        
+        
+
+    }
+
+    private void recordExitTime() {
+
+        FirebaseUser firebaseUser =firebaseAuth.getCurrentUser();
+        //TimeExit timeExit =new TimeExit(ServerValue.TIMESTAMP);
+        String timeStamp = new SimpleDateFormat("EEE, MMM d, yyyy h:mm a").format(new Date());
+        exitTimeSt.setText("ExitTime: "+timeStamp);
+        DatabaseReference dataRef =FirebaseDatabase.getInstance().getReference("Registered Users");
+        dataRef.child(firebaseUser.getUid()).child("Exit Time").push().setValue(timeStamp);
+
+    }
+
+    private void recordEnterTime() {
+        FirebaseUser firebaseUser =firebaseAuth.getCurrentUser();
+        //TimeEnter timeEnter = new TimeEnter(ServerValue.TIMESTAMP );
+        String timeStamp = new SimpleDateFormat("EEE, MMM d, yyyy h:mm a").format(new Date());
+        entryTimeSt.setText("Entry Time: "+timeStamp);
+        DatabaseReference dataRef =FirebaseDatabase.getInstance().getReference("Registered Users");
+        dataRef.child(firebaseUser.getUid()).child("Entry Time").push().setValue(timeStamp);
+
+
+
     }
 
     private void updateUI(FirebaseUser firebaseUser) {
         String userID =firebaseUser.getUid();
         DatabaseReference ref =FirebaseDatabase.getInstance().getReference("Registered Users");
-        ref.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+        ref.child(userID).child("Profile Details").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserData userData = snapshot.getValue(UserData.class);

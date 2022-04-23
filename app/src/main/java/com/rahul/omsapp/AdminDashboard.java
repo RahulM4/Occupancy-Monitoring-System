@@ -24,7 +24,7 @@ public class AdminDashboard extends AppCompatActivity {
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
     TextView adminID,adminName;
-    //public String available;
+    public String available;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +70,7 @@ public class AdminDashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String max_limits=txt_inputText.getText().toString();
-                String available = max_limits;
+                available = max_limits;
 
                 MaxCapacity maxCapacity=new MaxCapacity(max_limits,available);
 
