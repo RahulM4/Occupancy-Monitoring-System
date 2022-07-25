@@ -96,3 +96,8 @@ Security Considerations :
 -- The activation link is sent to the mail id so that only the authorised mail id individual can login and access the service.
 
 
+## Some SnapShots ##
+
+
+![WhatsApp Image 2022-07-25 at 1 09 26 PM](https://user-images.githubusercontent.com/75800571/180710106-a2559747-b760-4dfd-af63-353f3ea91899.jpeg)
+
